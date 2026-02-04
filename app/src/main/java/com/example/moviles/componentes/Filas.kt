@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
@@ -36,9 +37,13 @@ fun Filas(){
 
         Column(Modifier.width(100.dp)) {
             Text("tres")
+
+
             Row() {
 
-                Box(Modifier.background(Color.Red).width(20.dp).height(20.dp)) {
+                Box(Modifier.background(Color.Red).width(20.dp).height(20.dp)
+
+                ) {
                 }
                 Box(Modifier.background(Color.Blue).width(50.dp).height(20.dp)) {
                 }

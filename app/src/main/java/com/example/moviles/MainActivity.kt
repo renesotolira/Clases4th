@@ -1,5 +1,6 @@
 package com.example.moviles
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,10 +11,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.moviles.corrutinas.StudentsViewModel
+import com.example.moviles.corrutinas.WinnerView
 import com.example.moviles.navegacion.NavManager
 import com.example.moviles.ui.theme.MovilesTheme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("ViewModelConstructorInComposable")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,7 +28,8 @@ class MainActivity : ComponentActivity() {
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )*/
-                    NavManager(innerPadding)
+                    val studentsViewModel = StudentsViewModel()
+                    WinnerView(studentsViewModel)
                 }
             }
         }

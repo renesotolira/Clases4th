@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.moviles.corrutinas.StudentsViewModel
 import com.example.moviles.corrutinas.WinnerView
 import com.example.moviles.navegacion.NavManager
+import com.example.moviles.persistencia.ProfileView
 import com.example.moviles.ui.theme.MovilesTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )*/
                     val studentsViewModel = StudentsViewModel()
-                    WinnerView(studentsViewModel)
+                    ProfileView()
                 }
             }
         }

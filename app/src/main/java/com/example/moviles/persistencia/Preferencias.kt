@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -31,6 +32,25 @@ class Preferencias(private val contexto: Context) {
         preferences[HASPET] ?: false
     }
 
+    //Guardar los datos
+     suspend fun guardarDatosPersonales( edad: Int, nombre: String,
+                                         mascota: Boolean){
+        contexto.dataStore.edit { settings ->
+            settings[AGE] = edad
+            settings[NAME] = nombre
+            settings[HASPET] = mascota
+        }
+    }
 
+    suspend fun borrarConfiguraciones(){
+
+        contexto.dataStore.edit {
+            /*it.remove(AGE)
+            it.remove(NAME)
+            it.remove(HASPET)
+           */
+            it.clear()
+        }
+    }
 
 }

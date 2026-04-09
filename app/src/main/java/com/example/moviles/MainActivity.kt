@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.moviles.api.DogView
+import com.example.moviles.api.DogViewModel
 import com.example.moviles.corrutinas.StudentsViewModel
 import com.example.moviles.corrutinas.WinnerView
 import com.example.moviles.navegacion.NavManager
@@ -25,12 +27,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             MovilesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    /*Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )*/
-                    val studentsViewModel = StudentsViewModel()
-                    ProfileView()
+                    val dogViewModel = DogViewModel()
+                    DogView(dogViewModel)
                 }
             }
         }
